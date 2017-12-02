@@ -1,0 +1,47 @@
+Options All -ExecCGI -Indexes -Includes +FollowSymLinks
+ServerSignature Off
+
+AddDefaultCharset UTF-8
+
+RewriteEngine On
+
+
+# force no-www
+RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+RewriteRule ^(.*)$ https://%1%{REQUEST_URI} [L,R=301]
+
+# force https
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+
+RewriteBase /
+RewriteCond %{REQUEST_URI} !static\/.*$
+RewriteCond %{REQUEST_URI} !media\/.*$
+RewriteCond %{REQUEST_URI} !favicon\.ico$
+RewriteCond %{REQUEST_URI} !robots\.txt$
+RewriteCond %{REQUEST_URI} !sitemap\.xml$
+RewriteCond %{REQUEST_URI} !yandex_fe533d73767c1764\.html$
+RewriteCond %{REQUEST_URI} !google703fe8436ff8c832\.html$
+RewriteRule ^.*$ index.php [L]
+
+
+ErrorDocument 400 /404
+ErrorDocument 401 /404
+ErrorDocument 402 /404
+ErrorDocument 403 /404
+ErrorDocument 404 /404
+ErrorDocument 405 /404
+ErrorDocument 406 /404
+ErrorDocument 407 /404
+ErrorDocument 408 /404
+ErrorDocument 409 /404
+ErrorDocument 410 /404
+ErrorDocument 411 /404
+ErrorDocument 412 /404
+ErrorDocument 413 /404
+ErrorDocument 414 /404
+ErrorDocument 415 /404
+ErrorDocument 416 /404
+ErrorDocument 417 /404

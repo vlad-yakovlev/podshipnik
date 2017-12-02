@@ -1,0 +1,60 @@
+{
+    "src": "source",
+    "dest": "www",
+    "types": {
+        "css": {
+            "src": "**/*.css",
+            "pipe": [
+                [ "gulp-autoprefixer", "last 2 versions" ]
+            ],
+            "minify": [
+                [ "gulp-cssnano" ]
+            ]
+        },
+        "less": {
+            "src": "**/*.less",
+            "pipe": [
+                [ "gulp-less" ],
+                [ "gulp-autoprefixer", "last 2 versions" ]
+            ],
+            "minify": [
+                [ "gulp-cssnano" ]
+            ]
+        },
+        "js": {
+            "src": "**/*.js",
+            "pipe": [],
+            "minify": [
+                [ "gulp-uglify" ]
+            ]
+        },
+        "img-jpg": {
+            "src": "**/*.jpg",
+            "pipe": [],
+            "minify": [
+                [ "gulp-imagemin" ]
+            ]
+        },
+        "img-jpeg": {
+            "src": "**/*.jpeg",
+            "pipe": [],
+            "minify": [
+                [ "gulp-imagemin" ]
+            ]
+        },
+        "img-png": {
+            "src": "**/*.png",
+            "pipe": [],
+            "minify": [
+                [ "gulp-imagemin" ]
+            ]
+        },
+        "img-gif": {
+            "src": "**/*.gif",
+            "pipe": [],
+            "minify": [
+                [ "gulp-imagemin" ]
+            ]
+        }
+    }
+}

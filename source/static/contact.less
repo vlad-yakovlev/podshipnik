@@ -1,0 +1,69 @@
+.page {
+    & > main {
+        .map {
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+
+            & > div {
+                height: 100%;
+            }
+        }
+    }
+
+    & > footer {
+        .rept {
+            display: none;
+        }
+    }
+}
+
+
+@media (min-width: 680px) {
+    .page {
+        & > main {
+            .container:after {
+                content: '';
+                display: block;
+                padding-bottom: 350px;
+            }
+
+            .contact {
+                position: absolute;
+                z-index: 1;
+                padding: 20px 32px;
+                background-color: rgba(255, 255, 255, .9);
+            }
+        }
+    }
+}
+
+
+@media only screen and (max-width: 679px) {
+    .page {
+        & > main {
+            .container {
+                padding-bottom: 16px;
+            }
+
+            .map {
+                position: relative;
+                box-sizing: border-box;
+                height: 320px;
+            }
+        }
+    }
+}
+
+
+@media only screen and (max-width: 339px) {
+    .page {
+        & > main {
+            .contact {
+                font-size: 15px;
+            }
+        }
+    }
+}
